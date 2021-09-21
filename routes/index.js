@@ -34,7 +34,18 @@ route.get("/getdata", (req, res) => {
     });
 });
 
+//delete api
 
+route.delete("/delete/:id", (req, res) => {
+  var deleteQuery = { _id: req.params.id };
 
+  Blog.findByIdAndDelete(deleteQuery)
+    .then((deleteData) => {
+      res.json({ message: "Post Deleted Successfully" });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 module.exports = route;
