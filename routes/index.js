@@ -33,9 +33,7 @@ route.get("/getdata", (req, res) => {
       console.log(err);
     });
 });
-
 //delete api
-
 route.delete("/delete/:id", (req, res) => {
   var deleteQuery = { _id: req.params.id };
 
@@ -47,5 +45,4 @@ route.delete("/delete/:id", (req, res) => {
       console.log(err);
     });
 });
-
 module.exports = route;
