@@ -15,11 +15,26 @@ route.post("/post", (req, res) => {
 
   Blog.create(blogPost)
     .then((resData) => {
-      res.json({PostResult:resData,message:"Post created Successfully"});
+      res.json({ PostResult: resData, message: "Post created Successfully" });
     })
     .catch((err) => {
       console.log(err);
     });
 });
+
+//get all data
+route.get("/getdata", (req, res) => {
+  Blog.find({})
+    .sort({ date: "DESC" })
+    .then((resultData) => {
+      res.json(resultData);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+
+
 
 module.exports = route;
