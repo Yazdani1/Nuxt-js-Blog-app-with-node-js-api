@@ -14,6 +14,7 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
+
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   /*
@@ -24,6 +25,7 @@ export default {
    ** Global CSS
    */
   css: [],
+
   /*
    ** Plugins to load before mounting the App
    */
