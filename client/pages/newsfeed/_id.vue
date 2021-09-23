@@ -13,13 +13,10 @@
     </div>
   </div>
 </template>
-
 <script>
 import axios from "axios";
 import moment from "moment";
-
 const url = "http://localhost:8080/details/";
-
 export default {
   methods: {
     getcustomizeDate: function(date) {
