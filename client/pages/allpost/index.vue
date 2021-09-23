@@ -16,7 +16,7 @@
       <div class="col-md-9 card each_item">
         <div>
           <h5>{{ datapost.title }}</h5>
-          <p>{{ datapost.des }}</p>
+          <p>{{ datapost.des.substring(0,100) }}</p>
         </div>
       </div>
       <div class="col-md-2 card each_item">

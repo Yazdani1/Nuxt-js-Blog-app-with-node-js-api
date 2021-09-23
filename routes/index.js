@@ -61,6 +61,19 @@ route.get("/edit/:id", (req, res) => {
     });
 });
 
+//details post api
+
+route.get("/details/:id", (req, res) => {
+  var detailsQuery = { _id: req.params.id };
+  Blog.findOne(detailsQuery)
+    .then((detailsdata) => {
+      res.json(detailsdata);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 //udate edit data api
 
 route.put("/update/:id", (req, res) => {
@@ -74,6 +87,20 @@ route.put("/update/:id", (req, res) => {
   })
     .then((updatedata) => {
       res.json(updatedata);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+//latest post api
+
+route.get("/latestpost", (req, res) => {
+  Blog.find({})
+    .sort({ date: "DESC" })
+    .limit(5)
+    .then((latespost) => {
+      res.json(latespost);
     })
     .catch((err) => {
       console.log(err);
