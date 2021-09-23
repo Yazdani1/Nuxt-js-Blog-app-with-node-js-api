@@ -1,6 +1,6 @@
 <template>
   <div class="container card postDesign">
-    <h1>Create Post</h1>
+    <h1>Edit Post</h1>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Title:</label>
       <input
@@ -8,7 +8,7 @@
         v-model="Blog.title"
         class="form-control"
         id="exampleFormControlInput1"
-        placeholder="Please write your title"
+        
       />
     </div>
     <div class="mb-3">
@@ -23,8 +23,8 @@
       ></textarea>
     </div>
     <nuxt-link to="/allpost">
-      <button type="button" @click="addPost" class="btn btn-success">
-        Create Post
+      <button type="submit" @click="updatePost" class="btn btn-success">
+        Edit Post
       </button>
     </nuxt-link>
   </div>
@@ -33,19 +33,22 @@
 <script>
 import axios from "axios";
 
+const urlgeteditdata = "http://localhost:8080/edit/";
+const updateulr = "http://localhost:8080/update/"
+
 export default {
   data() {
     return {
       Blog: {
-        title: "Your post Title",
-        des: "Your description"
+        title: "",
+        des: ""
       }
     };
   },
   methods: {
-    async addPost() {
+    async updatePost() {
       await axios
-        .post("http://localhost:8080/post", this.Blog)
+        .put(updateulr + this.$route.params.id, this.Blog)
         .then(res => {
           console.log(res);
         })
@@ -55,15 +58,14 @@ export default {
     }
   },
 
+  async mounted(){
+      const result = await axios.get(urlgeteditdata + this.$route.params.id);
+
+      this.Blog = result.data;
+      
+  }
+
   
 };
 </script>
 
-<style scoped>
-.postDesign {
-  padding: 20px;
-}
-.postDesign {
-  margin-top: 20px;
-}
-</style>

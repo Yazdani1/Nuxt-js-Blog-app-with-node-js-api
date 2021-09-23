@@ -16,9 +16,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ">
-            <a class="nav-link active " style="color:white"  aria-current="page" href="#">Post Data</a>
-            <a class="nav-link" style="color:white" href="#">News Feed</a>
-            <a class="nav-link" style="color:white" href="#">All Post</a>
+            <nuxt-link to="/"><a class="nav-link active " style="color:white"  aria-current="page">Post Data</a> </nuxt-link>
+           <nuxt-link to="/newsfeed"> <a class="nav-link" style="color:white" href="#">News Feed</a></nuxt-link>
+            <nuxt-link to="/allpost"> <a class="nav-link" style="color:white" href="#">All Post</a></nuxt-link>
             
           </div>
         </div>

@@ -48,4 +48,36 @@ route.delete("/delete/:id", (req, res) => {
     });
 });
 
+//edit api
+
+route.get("/edit/:id", (req, res) => {
+  var editQuery = { _id: req.params.id };
+  Blog.findOne(editQuery)
+    .then((editData) => {
+      res.json(editData);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+//udate edit data api
+
+route.put("/update/:id", (req, res) => {
+  var updateQuery = { _id: req.params.id };
+
+  Blog.updateOne(updateQuery, {
+    $set: {
+      title: req.body.title,
+      des: req.body.des,
+    },
+  })
+    .then((updatedata) => {
+      res.json(updatedata);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 module.exports = route;
