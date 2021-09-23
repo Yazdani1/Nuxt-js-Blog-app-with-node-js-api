@@ -23,7 +23,7 @@
           >
             <h5>{{ latestspost.title }}</h5>
             <p>{{ latestspost.des.substring(0, 80) }}</p>
-            <p>Published on: {{getlatestpostDate(latestspost.date)}}</p>
+            <p>Published on: {{ getlatestpostDate(latestspost.date) }}</p>
           </div>
         </div>
       </div>
@@ -40,8 +40,8 @@ export default {
     getcustomizeDate: function(date) {
       return moment(date).format("MMMM Do YYYY, h:mm:ss a");
     },
-      getlatestpostDate: function(date) {
-      return moment(date).format('dddd');
+    getlatestpostDate: function(date) {
+      return moment(date).format("dddd");
     }
   },
   data() {
@@ -82,6 +82,12 @@ export default {
   padding: 10px;
 }
 
+.newsfeed:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 3px 10px 15px -1px rgba(0, 0, 0, 0.46);
+  box-shadow: 3px 10px 15px -1px rgba(0, 0, 0, 0.46);
+}
+
 .read_more {
   background: crimson;
   color: white;
@@ -104,5 +110,11 @@ export default {
   font-size: 20px;
 
   text-align: center;
+}
+
+.latest_post:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 3px 10px 15px -1px rgba(0, 0, 0, 0.46);
+  box-shadow: 3px 10px 15px -1px rgba(0, 0, 0, 0.46);
 }
 </style>

@@ -89,4 +89,11 @@ export default {
 .each_item {
   margin: 5px;
 }
+
+
+.each_item:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 3px 10px 15px -1px rgba(0, 0, 0, 0.46);
+  box-shadow: 3px 10px 15px -1px rgba(0, 0, 0, 0.46);
+}
 </style>
