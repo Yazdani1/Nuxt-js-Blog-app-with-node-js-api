@@ -16,6 +16,7 @@
   margin-top: 300px;
   position: absolute;
   margin-bottom: 10px;
+  
 }
 .center_item{
     color: white;
