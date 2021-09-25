@@ -4,6 +4,7 @@
       <div class="col-md-10">
         <h2>AlL Post</h2>
       </div>
+
       <div class="col-md-2">
         <nuxt-link to="/">
           <button type="button" class="btn btn-success">
@@ -12,11 +13,12 @@
         </nuxt-link>
       </div>
     </div>
+
     <div class="row" v-for="datapost in post" :key="datapost._id">
       <div class="col-md-9 card each_item">
         <div>
           <h5>{{ datapost.title }}</h5>
-          <p>{{ datapost.des.substring(0,100) }}</p>
+          <p>{{ datapost.des.substring(0, 100) }}</p>
         </div>
       </div>
       <div class="col-md-2 card each_item">
@@ -89,7 +91,6 @@ export default {
 .each_item {
   margin: 5px;
 }
-
 
 .each_item:hover {
   cursor: pointer;
