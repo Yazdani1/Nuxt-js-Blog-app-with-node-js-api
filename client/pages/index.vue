@@ -42,7 +42,9 @@ export default {
       }
     };
   },
+
   methods: {
+
     async addPost() {
       await axios
         .post("http://localhost:8080/post", this.Blog)
@@ -53,6 +55,7 @@ export default {
           console.log(err);
         });
     }
+    
   },
 
   
