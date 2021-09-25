@@ -1,6 +1,5 @@
 <template>
   <div class="footer_Design">
-  
       <div class="footer_main">
         <center class="center_item">
           Blog app copyright 2021
@@ -9,7 +8,6 @@
    
   </div>
 </template>
-
 <style scoped>
 .footer_Design {
   background: blueviolet;

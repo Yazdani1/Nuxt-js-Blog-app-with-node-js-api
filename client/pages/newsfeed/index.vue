@@ -36,6 +36,7 @@ import moment from "moment";
 const url = "http://localhost:8080/getdata";
 const latestposturl = "http://localhost:8080/latestpost";
 export default {
+
   methods: {
     getcustomizeDate: function(date) {
       return moment(date).format("MMMM Do YYYY, h:mm:ss a");
@@ -44,12 +45,14 @@ export default {
       return moment(date).format("dddd");
     }
   },
+  
   data() {
     return {
       Blog: [],
       LatestPost: []
     };
   },
+
   async mounted() {
     //to get all post
     await axios
