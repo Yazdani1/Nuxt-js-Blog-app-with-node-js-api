@@ -1,4 +1,5 @@
 <template>
+
   <div class="container">
     <div class="detailspost card">
       <h4>{{ Post.title }}</h4>
@@ -13,6 +14,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import axios from "axios";
 import moment from "moment";
