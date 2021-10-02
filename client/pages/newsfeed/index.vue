@@ -12,6 +12,9 @@
             </button>
           </nuxt-link>
         </div>
+
+
+
       </div>
       <div class="col-md-4">
         <div class="main_latest_post card">
@@ -36,7 +39,6 @@ import moment from "moment";
 const url = "http://localhost:8080/getdata";
 const latestposturl = "http://localhost:8080/latestpost";
 export default {
-
   methods: {
     getcustomizeDate: function(date) {
       return moment(date).format("MMMM Do YYYY, h:mm:ss a");
